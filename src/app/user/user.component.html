@@ -1,0 +1,51 @@
+  <mat-toolbar color="primary">
+      <mat-toolbar-row> <button mat-button type="button" >
+        
+                <mat-icon>home</mat-icon>
+
+      <span>Biometrico</span>
+  </button>
+        <span class="example-fill-remaining-space"></span>
+          <span class="align-right"></span>
+          <span class="example-spacer"></span>
+          <button mat-button >
+              <mat-icon>perm_device_information</mat-icon>
+              <span>Informmación</span>
+          </button>
+          <button mat-button>
+              <mat-icon>perm_contact_calendar</mat-icon>
+              <span>Contacto</span>
+      </button>
+          
+          <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>more_vert</mat-icon>
+              </button>
+      <mat-menu #menu="matMenu"  >
+        <button mat-menu-item (click)="person()" >
+          <mat-icon> person_pin</mat-icon>
+           <span>Personas</span>
+         </button>
+         <button mat-menu-item  (click)="permiso()" >
+           <mat-icon> layers_clear</mat-icon>
+           <span>Permisos</span>
+         </button>
+         <button mat-menu-item (click)="ubicacion()"   >
+           <mat-icon> pin_drop</mat-icon>
+           <span>Ubicacón</span>
+         </button>
+         <button mat-menu-item  (click)="reporte()">
+           <mat-icon> local_post_office</mat-icon>
+   
+           <span>Reportes</span>
+         </button>
+        <button mat-menu-item (click)="logout()"  >
+       
+          <mat-icon >exit_to_app</mat-icon>
+          <span>Salir</span>
+        </button>
+
+      
+      </mat-menu>
+  </mat-toolbar-row>
+  </mat-toolbar>
+    

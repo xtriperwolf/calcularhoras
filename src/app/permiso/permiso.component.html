@@ -1,0 +1,68 @@
+<app-user></app-user>
+<div class="example-container">
+    
+<h1>Registro de personas<button mat-fab color="primary" aria-label="Example icon button with a delete icon">
+  <mat-icon>save</mat-icon>
+</button></h1>
+
+
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Cedula</mat-label>
+        <input matInput placeholder="17xXXXXXXX" [(ngModel)]="cedula" name="cedula" required>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Nombre y apellido</mat-label>
+        <input matInput placeholder="Juan Perez" [(ngModel)]="username" name="username" required>
+    </mat-form-field>
+
+       <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Fecha</mat-label>
+        <input matInput placeholder="09XXXXXXXX" [(ngModel)]="fecha" name="fecha" type="date" required>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Hora</mat-label>
+      <input matInput placeholder="10:00" [(ngModel)]="username" name="username" required>
+  </mat-form-field>
+    
+  </div>
+  <div class="example-container">
+    
+    <h1>Personas en el sistemma</h1>
+    <mat-form-field>
+      <mat-label>Filtro</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium">
+    </mat-form-field>
+    
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    
+      <!-- Position Column -->
+      <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+      </ng-container>
+    
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+    
+      <!-- fecha Column -->
+      <ng-container matColumnDef="fecha">
+        <th mat-header-cell *matHeaderCellDef> Fecha </th>
+        <td mat-cell *matCellDef="let element"> {{element.fecha}} </td>
+      </ng-container>
+    
+      <!-- hora Column -->
+      <ng-container matColumnDef="hora">
+        <th mat-header-cell *matHeaderCellDef> Hora </th>
+        <td mat-cell *matCellDef="let element"> {{element.hora}} </td>
+      </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+  </div>

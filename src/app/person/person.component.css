@@ -1,0 +1,16 @@
+.example-container .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+    width: 25%;
+  }
+  
+  p {
+    font-family: Lato;
+  }
+  td {
+    border: 1px solid black;
+  }
+
+  table{
+    width: 100%;
+  }
+  
